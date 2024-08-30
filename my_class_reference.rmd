@@ -106,3 +106,5 @@ e.g.:
     max_amount = max(amount)
   ) |>
   arrange(desc(max_amount)) 
+
+assignment 08/30 https://github.com/lmicheli21/data_journalism_2024_fall/commit/26e97ce97ae7a8720346ec501cb3b0c6573fa82e
