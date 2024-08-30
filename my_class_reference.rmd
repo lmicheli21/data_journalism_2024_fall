@@ -1,6 +1,6 @@
 ---
 title: "Class Reference"
-author: "Derek Willis"
+author: "Leonardo Micheli"
 output:
   html_document:
     theme: cerulean
@@ -32,4 +32,77 @@ setwd("~/jour472/data_journalism_2024_fall")
 ```{r}
 install.packages("tidyverse")
 library(tidyverse)
-```
+
+### How to load a file from the Internet:
+   # inside read_rds() function, we’ve put the name of the file we want to load
+
+maryland_winred_contributions <- read_rds("https://thescoop.org/files/maryland_winred.rds")
+
+### How to have a first view of the file
+
+glimpse(maryland_winred_contributions)
+or
+head(maryland_winred_contributions)
+
+# take your data set and then do this specific action to it.
+  data |> function
+
+### How to count data
+  |> group_by(COLUMN NAME) |> 
+    summarize(VARIABLE NAME = AGGREGATE
+      FUNCTION(COLUMN NAME))
+    e.g.:
+maryland_winred_contributions |>
+  group_by(memo_text) |>
+  summarise(
+    count_contribs = n()
+  )
+
+# How to count the number oof rows or records in each group
+    n()
+
+### How to arrange data in order
+    arrange()
+maryland_winred_contributions |>
+  group_by(memo_text) |>
+  summarise(
+    count_contribs = n()
+  ) |>
+  arrange(desc(count_contribs))
+
+### How to know the total amount of a set of data
+  We put the column we want to total – “amount” – inside the sum() function sum(amount)
+  e.g.:
+maryland_winred_contributions |>
+  group_by(memo_text) |>
+  summarise(
+    count_contribs = n(),
+    total_amount = sum(amount)
+  ) |>
+  arrange(desc(total_amount))
+  
+### How to calculate the average amount for each set of data - the mean - and the amount that sits at the midpoint of our data - the median.
+maryland_winred_contributions |>
+  group_by(memo_text) |>
+  summarise(
+    count_contribs = n(),
+    total_amount = sum(amount),
+    mean_amount = mean(amount),
+    median_amount = median(amount)
+  ) |>
+  arrange(desc(count_contribs))
+
+### How to calculate the highest and lowest set of data
+ we can use the min() and max() functions.
+e.g.:
+ maryland_winred_contributions |>
+  group_by(memo_text) |>
+  summarise(
+    count_contribs = n(),
+    total_amount = sum(amount),
+    mean_amount = mean(amount),
+    median_amount = median(amount),
+    min_amount = min(amount),
+    max_amount = max(amount)
+  ) |>
+  arrange(desc(max_amount)) 
