@@ -47,7 +47,8 @@ head(maryland_winred_contributions)
 # take your data set and then do this specific action to it.
   data |> function
 
-### How to count data
+### How to count data 
+### and how we want to group by data
   |> group_by(COLUMN NAME) |> 
     summarize(VARIABLE NAME = AGGREGATE
       FUNCTION(COLUMN NAME))
@@ -108,3 +109,13 @@ e.g.:
   arrange(desc(max_amount)) 
 
 assignment 08/30 https://github.com/lmicheli21/data_journalism_2024_fall/commit/26e97ce97ae7a8720346ec501cb3b0c6573fa82e
+
+# if you want to use a file is always on “”
+
+# to create a new tab | if you want something else than the Tibble (temporary table)
+  contribs_by_date <- maryland_winred_contributions |>
+  group_by(date) |>
+  summarise(
+    count_contribs = n()
+  ) |>
+  arrange(desc(count_contribs))
