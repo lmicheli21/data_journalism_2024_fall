@@ -59,7 +59,7 @@ maryland_winred_contributions |>
     count_contribs = n()
   )
 
-# How to count the number oof rows or records in each group
+# How to count the number of rows or records in each group
     n()
 
 ### How to arrange data in order

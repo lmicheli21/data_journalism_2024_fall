@@ -140,7 +140,7 @@ It represents the full details for a specific data I asked the system to process
 **Task** Run the following codeblock:
 
 ```{r}
-maryland_winred_contributions |>
+westvirginia_winred_contributions |>
   group_by(date) |>
   summarise(
     count_contribs = n()
