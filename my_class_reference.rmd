@@ -119,3 +119,77 @@ assignment 08/30 https://github.com/lmicheli21/data_journalism_2024_fall/commit/
     count_contribs = n()
   ) |>
   arrange(desc(count_contribs))
+
+  
+# pre_lab_02
+  1.  Review of first lab and questions/problems.
+  2.  Review GitHub
+  3.  Demonstration of mutate, filtering and dates
+
+###  for making percentage
+select() --> just show this columns
+mutate() --> in it i can create things like percentages but also can improve data
+
+**Selecting simply returns only the fields named**. So if you only want to see city and amount, you select those fields. When you look at your data again, you'll have two columns. If you try to use one of your columns that you had before you used select, you'll get an error. **Selecting works with columns. You will have the same number of records when you are done, but fewer columns of data to work with.**
+
+
+e.g.,
+
+primary_24 |>
+  select(office_name, office_district, candidate_name, party, county_name, election_day, votes) |>
+  mutate(
+  percent_election_day = (election_day/votes)*100
+)
+
+# of this, we can make a better ordering? 
+  just adding the arrange function
+
+primary_24 |>
+  select(office_name, office_district, candidate_name, party, county_name, election_day, votes) |>
+  mutate(
+  percent_election_day = (election_day/votes)*100
+)  |> 
+  arrange(desc(percent_election_day))
+  
+# mutate() also can improve data such as standardizing data - for example, making different spellings of, say, cities into a single one.
+  --> You'll notice that there's a mix of styles: "Baltimore" and "BALTIMORE" for example. R will think those are two different cities, and that will mean that any aggregates we create based on city won't be accurate.
+  Mutate - it's not just for math! And a function called `str_to_upper` that will convert a character column into all uppercase. Now we can say exactly how many donations came from Baltimore (I mean, of course, BALTIMORE).
+  e.g.,
+standardized_maryland_cities <- maryland_cities |>
+  mutate(
+    upper_city = str_to_upper(city)
+)
+  
+# Mutate can make that happen by creating a new column and putting in a category value *based on the amount* of each record
+  It starts out as a typical mutate statement, but case_when introduces some new things. Each line is basically a conditional filter followed by `~` and then a value for the new column for records that match that filter. 
+  
+### to filter
+  **Filtering creates a subset of the data based on criteria**. All records where the amount is greater than 150,000. All records that match "College Park". Something like that. **Filtering works with rows -- when we filter, we get fewer rows back than we start with.**
+e.g.,
+
+prince_georges <- primary_24 |> filter(county_name == "Prince George's County")
+
+head(prince_georges)
+
+# We can then use our new `amount_category` column in group_by statements to make summarizing easier.
+e.g.,
+maryland_winred_categories |> 
+  group_by(amount_category) |> 
+  summarize(total_amount = sum(amount)) |> 
+  arrange(desc(total_amount))
+
+# AND - OR are boolean operators.
+  AND is `&` and OR is `|`
+  --> OR is additive; AND is restrictive
+e.g.,
+and_prince_georges <- primary_24 |> filter(county_name == "Prince George's County" & office_name == "U.S. Senator")
+
+nrow(and_prince_georges)
+
+## Dates
+  often the format is `m/d/y`, and the lubridate function is called `mdy` that we can use with mutate:
+e.g.,    
+maryland_expenses <- maryland_expenses |> mutate(expenditure_date=mdy(expenditure_date))
+
+head(maryland_expenses)
+
