@@ -195,6 +195,7 @@ maryland_winred_categories |>
   group_by(amount_category) |> 
   summarize(total_amount = sum(amount)) |> 
   arrange(desc(total_amount))
+    
 ```
 What's the largest category in terms of dollar amount?
 
