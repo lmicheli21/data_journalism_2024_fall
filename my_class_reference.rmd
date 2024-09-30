@@ -193,3 +193,51 @@ maryland_expenses <- maryland_expenses |> mutate(expenditure_date=mdy(expenditur
 
 head(maryland_expenses)
 
+# , guess_max=10
+what types the data  are for the (e.g.,) first 10. 
+
+it might give this Warning: One or more parsing issues, call `problems()` on your data frame for details, e.g.:
+  dat <- vroom(...)
+--> to problem()
+Can show that there might be values in a character column. 
+
+# to find a specific data
+texas_precinct_20 |> filter(election_day == "5+")
+
+# case_when() not for all columns but only for some: with .default
+
+texas_precinct_20 <- texas_precinct_20 |>
+  mutate(election_day = case_when(
+    election_day == '5+' ~ '49',
+    .default = election_day
+  ))
+
+# to transform a character in a number, and vicersa:
+
+texas_precinct_20 <- texas_precinct_20 |> mutate(election_day = as.numeric(election_day)) [or as.character()]
+
+# first thing to do with dates is looking at they borders. 
+
+# `clean_names()` 
+#   rename(linenumber = x1_linenumber) change name of a column. 
+  new name comes firts
+
+#   get_dupes()
+  show me the rows that are exactly duplicated. 
+#   distinct() 
+  it cleans duplicates. 
+#str_sub() serves to standardize field, for instance, it converts the ZIP codes that have nine digits to five digits
+    mutate(zip = str_sub(zip, start=1L, end=5L))
+# str_detect
+    mean "does this thing exist?"
+    dc_food |>
+  group_by(recipient_name) |>
+  summarise(
+    count=n()
+  ) |>
+  filter(str_detect(recipient_name, '^w|^W')) |> 
+  arrange(recipient_name)
+    
+    
+    
+    

@@ -1,0 +1,40 @@
+---
+title: "Para4_Eng"
+author: "Leonardo Micheli"
+output: html_document
+date: "2024-09-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Install refinr package
+```{r}
+install.packages('refinr')
+```
+# Load libraries and settings
+```{r}
+
+options(scipen=999)
+library(tidyverse)
+library(lubridate)
+library(refinr)
+```
+
+```{r}
+age_congress <- read_csv("data/data_aging_congress.csv")
+```
+Paragraph 4
+
+#Now, members of Congress have always been older than the public at large, as well as the population constitutionally eligible to serve on Capitol Hill (at least 25 years old for the House and 30 for the Senate). According to the 2020 census, the median age of the entire U.S. population was about 39, and among those 25 and older,3 it was 51 — almost 22 and 10 years younger, respectively, than the median member of the 116th Congress was at the time. But the U.S. population is also far more elderly than in the past: As of the 2020 census, about 42 percent were 45 or older, twice the share in the same age group a century before. Of course, this is partly due to people living longer and having fewer children, which reduces the share of younger people entering the population.
+
+###Task: based on the data we have, the key part of the chosen paragraph that we can directly address is the fact that "members of Congress have always been older than the public at large". Calculate the median age of Congress members and compare it to the general population age statistics from the 2020 census. 
+
+#Answer: 
+
+```{r}
+age_congress |>
+  summarise(mean_age = mean(age_years))
+```
+

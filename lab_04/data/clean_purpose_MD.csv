@@ -1,0 +1,339 @@
+linenumber,fec_committee_id,transaction_id,entity_type,organization_name,last_name,first_name,middle_name,prefix,suffix,street_1,street_2,city,state,zip_code,election_code,date,amount,purpose,purpose_clean,memo_code,memo_text,cycle,candidate
+SB17,C00840017,500673705,IND,NA,O'Connell,Sheila,NA,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-05-30,12302.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673706,IND,NA,O'Connell,Sheila,NA,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-06-13,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673704,IND,NA,O'Connell,Sheila,NA,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-06-27,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661924,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-05-13,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656466,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-04-29,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656460,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673674,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673673,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673675,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661918,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673696,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,3510.4,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673694,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,3510.4,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661919,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-05-13,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656461,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-04-29,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673677,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-06-13,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673676,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-05-30,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673678,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-06-27,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673679,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673695,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673680,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673681,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661922,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661920,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656464,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656462,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661927,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656469,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656463,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673669,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673668,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673670,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661921,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673682,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,2376.91,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656458,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,2376.91,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673683,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,2376.91,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673684,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,2376.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661916,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,2376.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673701,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673702,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656467,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673700,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661925,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656459,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,1607.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661917,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,1607.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673686,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,1607.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673687,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,1607.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673685,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1607.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673672,IND,NA,Henry,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1550.21,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656465,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661923,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673698,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673699,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673697,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673691,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673693,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673692,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-13,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500656468,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-29,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661926,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-13,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673707,IND,NA,McLaughlin,Evan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-27,1188.21,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673671,IND,NA,Henry,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-06-21,1171.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673688,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-05-30,778.92,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673689,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-06-13,727.57,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673690,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-06-27,646.89,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661883,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-05-16,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500658558,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-05-02,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500658559,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-02,418.26,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500661884,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-16,391.21,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500673607,IND,NA,O'Connell,Sheila,NA,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-05-30,375,Stipend,Salary,NA,NA,2024,Alsobrooks
+SB17,C00840017,500673703,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-05-30,262.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655606,IND,NA,O'Connell,Sheila,Claire,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-04-12,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655594,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-04-12,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655593,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655607,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-04-12,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655600,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655598,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655601,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655595,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655596,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,2376.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655592,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655597,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655602,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655599,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-12,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655590,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-04-04,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655603,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-04-19,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655604,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-19,512.98,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500655591,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-04-04,260.11,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640964,IND,NA,O'Connell,Sheila,Claire,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-02-28,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642331,IND,NA,O'Connell,Sheila,Claire,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-03-14,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645127,IND,NA,O'Connell,Sheila,Claire,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-03-28,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638254,IND,NA,O'Connell,Sheila,Claire,NA,NA,3916 Washington St,NA,Kensington,MD,208953933,NA,2024-02-14,4971.76,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640952,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-02-28,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642332,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-03-14,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634099,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-01-30,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638255,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-02-14,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645128,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-03-28,4660.25,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614411,IND,NA,Sloan,David,Augustine,NA,Jr,PO Box 3583,NA,Capitol Heights,MD,207913583,NA,2024-01-11,4659.71,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640951,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645121,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634093,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,4364.78,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614405,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638248,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642325,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,4364.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645122,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-03-28,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634094,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-01-30,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642326,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-03-14,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640953,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-02-28,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638249,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-02-14,3473.97,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614406,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2024-01-11,3473.46,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640961,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642327,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645125,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638250,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614407,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638252,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634097,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634095,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640959,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645123,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642329,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,2895.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634101,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,2881.83,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614413,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,2881.4,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638258,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640962,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642335,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645131,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,2880.96,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638251,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640955,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634096,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642328,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645124,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,2855.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614408,IND,NA,Hines,Jordan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,2663.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634091,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,2532.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614409,IND,NA,Meier,Nicholas,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,2476.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640956,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,2376.91,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645119,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,2376.91,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642323,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,2376.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638246,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,2376.9,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614402,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,2220.41,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642333,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640950,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645129,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,1618.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645120,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634092,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640957,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638247,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642324,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614404,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,1606.79,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614403,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,1589.65,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640963,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645126,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638253,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642330,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634098,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,1549.05,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614410,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,1548.59,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500645130,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-28,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640960,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-28,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634100,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-30,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638257,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500642334,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-14,1539.61,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614412,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-11,1539.12,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638256,IND,NA,Southworth,Crystal,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-14,1092.1,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640954,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-03-07,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638287,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-02-22,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500630647,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-01-25,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500643552,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-03-20,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500634065,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-02-08,632.22,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614429,IND,NA,Nealon,Ryan,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-01-08,621.86,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500640958,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-07,508.46,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500643553,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-03-20,498.63,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500614386,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2024-01-11,334.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500638288,IND,NA,Weinberg,Marisa,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2024-02-22,233.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610239,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505913,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532765,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595309,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590815,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610241,IND,NA,Sloan,David,Augustine,NA,Jr.,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,4637.31,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610240,IND,NA,Sloan,David,Augustine,NA,Jr.,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,4637.31,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595313,IND,NA,Sloan,David,Augustine,NA,Jr.,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,4637.31,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532766,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595310,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610238,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610237,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505914,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590816,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610258,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,4212.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505915,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610242,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590817,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595311,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610243,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532767,IND,NA,Ford,Gina,Regina,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610256,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,3156.52,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590813,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595307,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610257,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505911,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532763,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610253,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610252,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595312,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505916,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532768,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590818,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610259,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,2863.92,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610248,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595306,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590812,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532762,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505910,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610247,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500532764,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-30,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500505912,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-12,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595308,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-29,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610249,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610250,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590814,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-14,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610251,IND,NA,Washington,Omar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-28,1423.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590822,IND,NA,Sloan,David,Augustine,NA,Jr.,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-17,1022.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500552807,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-02,688.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590821,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-16,644.53,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595316,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-30,629.86,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610246,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-12-28,629.86,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610260,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-14,513.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500484453,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-05,507.03,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590820,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-16,501.34,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610254,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-12-28,501.34,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500511823,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-10-19,501.15,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500552805,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-02,492.27,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595315,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-30,490.29,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500552806,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-11-02,490.29,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500484455,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-10-05,482.59,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500511824,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-10-19,482.59,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610255,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-12-14,473.21,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500590819,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-16,457.7,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500596910,IND,NA,Winfield,Rachel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-12-08,432,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500595314,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-11-30,391.59,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610244,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-12-14,378.07,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500610245,IND,NA,Sanders,Hannah,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-12-15,290,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226310,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400345,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321397,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259839,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353102,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367467,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259840,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353103,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400344,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,4342.38,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226311,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367468,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321398,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,4342.37,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400346,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-09-28,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226312,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-07-13,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353104,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-08-30,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321399,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-08-14,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367469,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-09-12,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259841,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-07-28,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367465,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321395,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400350,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353100,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259837,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226308,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367470,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400349,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353105,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321400,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259842,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226313,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367464,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400347,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259836,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226307,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321394,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353099,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259838,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-28,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321396,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-14,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367466,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-12,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226309,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500353101,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-30,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500400348,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-28,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500367463,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-07,507.77,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259834,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-27,507.6,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321392,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-10,492.64,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500321393,IND,NA,Hector,Kya,NA,NA,NA,1101 Mercantile Ln,Ste 100,Fort Washington,MD,20744,NA,2023-08-10,480.85,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500393236,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-09-21,427.11,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500226280,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-07-13,425.82,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500338855,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-24,258.4,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500393238,IND,NA,Golwas,Payton,NA,NA,NA,1100 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745380,NA,2023-09-21,257.26,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500338858,IND,NA,Hector,Kya,NA,NA,NA,1101 Mercantile Ln,Ste 100,Fort Washington,MD,20744,NA,2023-08-24,256.41,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500259835,IND,NA,Hector,Kya,NA,NA,NA,1101 Mercantile Ln,Ste 100,Fort Washington,MD,20744,NA,2023-07-27,256.2,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500338857,IND,NA,Butler,Sloane,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-08-24,175.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158355,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-30,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096768,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-12,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208726,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191424,IND,NA,Chase,David,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,4983.75,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208727,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,4196.95,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158356,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-30,4196.95,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191425,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,4196.94,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096769,IND,NA,Cooper,Daniel,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-12,4196.94,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208728,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-06-29,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191426,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-06-14,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096770,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-05-12,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158357,IND,NA,Ford,Gina,Regina,NA,NA,11319 Kettering Ter,NA,Upper Marlboro,MD,207741567,NA,2023-05-30,3451.06,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096771,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-12,3386.33,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208724,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191422,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,3156.51,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158354,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-30,3156.5,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158358,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-30,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208729,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191427,IND,NA,Henderson,Oscar,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,2878.48,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500158353,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-30,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191421,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096766,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-12,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208723,IND,NA,Appelstein,Julie,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,2202.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500096767,IND,NA,Bayrd,Philip,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-05-12,1881.93,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191423,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-14,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208725,IND,NA,Bridgewater,Kemia,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,1602.54,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500191428,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-15,619.99,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00840017,500208721,IND,NA,Aalim-Johnson,Naadira,NA,NA,NA,1101 Mercantile Ln,Ste 100,Upper Marlboro,MD,207745360,NA,2023-06-29,247.43,Salary,Salary,X,*,2024,Alsobrooks
+SB17,C00869016,71902,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-06-07,60630.63,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71901,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-06-26,60270.03,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71900,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-05-28,59126.97,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71898,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-05-13,51975,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71876,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-06-27,16016.68,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71874,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-05-10,14921.15,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71868,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-06-26,11358.36,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71846,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-05-28,5124.81,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71835,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-05-13,3767.75,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71821,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-04-26,2167.87,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,71749,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-06-07,313.59,STAFFING - SEE MEMO,Salary,NA,NA,2024,Hogan
+SB17,C00869016,VPP168,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-04-10,104415.24,STAFFING SERVICES,Salary,NA,NA,2024,Hogan
+SB17,C00869016,VPP136,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-04-05,1500,STAFFING SERVICES,Salary,NA,NA,2024,Hogan
+SB17,C00869016,47,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-03-11,59093.41,STAFFING SERVICES,Salary,NA,"Political strategy, campaign mgmt, comms, digital, policy, operations & logistical support services",2024,Hogan
+SB17,C00869016,46,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-02-28,10447.98,STAFFING SERVICES,Salary,NA,"Political strategy, campaign management, communications, operations and logistical support services",2024,Hogan
+SB17,C00869016,45,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-02-23,9501.03,STAFFING SERVICES,Salary,NA,"Political strategy, campaign management, communications, operations and logistical support services",2024,Hogan
+SB17,C00869016,50,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-03-28,6421.44,STAFFING SERVICES,Salary,NA,Campaign management services,2024,Hogan
+SB17,C00869016,48,ORG,PURPLE SURFBOARD,NA,NA,NA,NA,NA,2077 SOMERVILLE RD,NA,ANNAPOLIS,MD,21401,NA,2024-03-26,4057.55,STAFFING SERVICES,Salary,NA,"Political strategy, campaign mgmt, comms, digital strategy, policy, operations & logistical services",2024,Hogan

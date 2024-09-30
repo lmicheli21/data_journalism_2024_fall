@@ -95,7 +95,7 @@ week('2024-08-07')
 
 
 **Q3** Using lubridate, show which month saw the largest number of registrations. Does the answer help shed more light on Q2? 
-**A3** the month that saw the largest number of registrations was July (26139), following up by June (19475) and March (15960). Once again, we can notice how Presiden Biden's decision made people register more. 
+**A3** the month that saw the largest number of registrations was July (26139), following up by June (19475) and March (15960). Once again, we can notice how President Biden's decision made people register more. 
 
 ```{r}
 md_voters_per_month_ <- md_voters_2024 |>
