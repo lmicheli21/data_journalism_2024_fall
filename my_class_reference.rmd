@@ -238,6 +238,28 @@ texas_precinct_20 <- texas_precinct_20 |> mutate(election_day = as.numeric(elect
   filter(str_detect(recipient_name, '^w|^W')) |> 
   arrange(recipient_name)
     
+#bind_rows
+    it simply merge together columns. It combines data.
     
+#to take out a row is possible to do it by filtering negatively:
+    county_voters_combined <- county_voters_combined |>
+  filter(COUNTY != "TOTAL")
+
+#join has different meanings
+    1. records that matched the interserction of two groups
+    2. records of one group + only the matched by the second group --> #left_join/right_join
+    3. records of everything 
     
+#nrow counts the number of rows
+
+#to join two same colours but with different name the order matters. First data framegoes first, second dataframe goes second.  
+    maryland_population_with_voters_and_demographics <- maryland_population_with_voters |> left_join(maryland_demographics, join_by(#COUNTY==NAME))
+
+    it would not work if they are two different data types (chr and dbl) and if they have two different names.  
+    
+#to change the datatype from characters to number is:
+  maryland_zcta <- maryland_zcta |> mutate(across(ZCTA5N, as.character))
+
+
+
     
