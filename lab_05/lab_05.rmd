@@ -1,0 +1,135 @@
+---
+title: "lab_05"
+author: "Leonardo Micheli"
+date: "2024-10-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries and establish settings
+
+```{r}
+# load the tidyverse
+options(scipen=999)
+library(tidyverse)
+```
+
+## Getting Started
+
+This week we'll be combining and joining data to make it more useful and to ask some questions about it. This week, we'll revisit our new Maryland voters data and try to join it with contributions to the Harris campaign from Maryland donors made via ActBlue. Can we find new voters who are not registered Democrats who gave to Harris after she became a presidential candidate on July 21? What, if anything, can we say about those people?
+
+We'll be doing something similar to what Ence Morse did for [this Washington Post story](https://www.washingtonpost.com/politics/2024/09/24/kamala-harris-younger-donors/?pwapi_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZWFzb24iOiJnaWZ0IiwibmJmIjoxNzI3MzIzMjAwLCJpc3MiOiJzdWJzY3JpcHRpb25zIiwiZXhwIjoxNzI4NzA1NTk5LCJpYXQiOjE3MjczMjMyMDAsImp0aSI6ImIwYWMxNTk4LWMwMDgtNDE5Ny04MjAyLWVmMWNjZWFmYWZiMiIsInVybCI6Imh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9wb2xpdGljcy8yMDI0LzA5LzI0L2thbWFsYS1oYXJyaXMteW91bmdlci1kb25vcnMvIn0.3-s0tBkMV7Y9DD21CBsKMlaliGlOKT2egCO-UFT735Y), just on a smaller scale.
+
+First, load two CSV contribution files in the `data` folder, one each for donations made in July and August, and then combine them into a single dataframe.
+
+```{r}
+# load the Harris contribution data files and combine them
+
+August_Harris <- read_csv("data/august_harris.csv")
+July_Harris <- read_csv("data/july_harris.csv")
+August_July_Harris_combined <- bind_rows(list(August_Harris, July_Harris))
+
+```
+
+Next, let's read in the new voters (people who registered in 2024):
+
+```{r}
+# load the new voters data
+
+new_voters <- read_csv("data/new_voters.csv")
+
+```
+
+Next join the Harris donations to the voter data. Remember, people's names are common, __so you'll want to use name columns and address information__. You'll need to figure out which columns to use from both dataframes. The new_voters data has both a single Address column and various parts of the address, such as HouseNumber. Make a plan for picking your join columns - try out some combinations - and save the results to a new dataframe.
+
+
+
+```{r}
+# join the combined Harris file to the new voters
+# you will need to determine what columns to use
+
+New_voters_join <- August_July_Harris_combined |> inner_join(new_voters, join_by(last_name == LastName, first_name == FirstName, middle_name == MiddleName, address_one == Address, zip == ResidentialZip, suffix == Suffix))
+
+
+```
+
+## Answer questions
+
+Q1. Explain why you used the columns you did to make the join, and why that result is better than other ways you tried. Are there any problems with the join you made, such as the possibility of false positives?
+
+A1. 
+To identify new voters who also voted for Harris, I combined several columns to ensure accuracy. To avoid duplicates, I used the following fields: last name, first name, middle name, suffix, address, and ZIP code. This method helped ensure that each individual in the dataset was unique.
+
+Q2. Based on your join, how many donations to Harris have come from people who registered this year? How many unique people does that represent, and which donors have given the largest _number_ of donations since July 20? 
+
+A2. Harris received 49 donations from people who registered this year. This donations represents 35 unique people. While the largest donator since July 20th are Veronica Barzelatto and Rilwan Johnson with 4 total donations. 
+
+```{r}
+New_voters_join |>
+   summarise(
+    count=n()
+  )
+```
+
+```{r}
+
+New_voters_join |>
+  group_by(first_name, last_name) |> 
+   summarise(
+    count=n()
+  )
+```
+
+```{r}
+New_voters_join |>
+    group_by(first_name, last_name) |> 
+   summarise(
+    count=n()
+  ) |>
+arrange(desc(count))
+```
+
+
+Q3. What are the party and gender breakdowns of those donors? How many donations has Harris gotten from non-Democrats?
+
+A3. Of the donors discovered in the previous task, 8 of them come from non-democrats, 26 are females, 21 male, and 2 unknown gender. 
+
+```{r}
+New_voters_join |> 
+  filter(Party != "DEM")|>
+  group_by(Party) |> 
+   summarise(
+    count=n()
+  ) |>
+arrange(desc(count))
+```
+
+```{r}
+New_voters_join |>
+    group_by(Gender) |> 
+   summarise(
+    count=n()
+  ) |>
+arrange(desc(count))
+```
+
+
+Q4. Choose your own adventure: I want you to come up with a question you could ask of one of the dataframes we've created for this lab. It could involve just the new voters, or the donors or the joined dataframe, but it cannot be a variation of a previous question (so, for example, you can't ask, "How many Republicans have given to Harris"). First write the question and then try to answer it by writing code. If you're not sure of the exact code, try googling (or ask me for advice) but, at a minimum, describe what you think you'd have to do to answer it and what the results would look like. That can help.
+
+A4: On which days did Harris receive the most donations from new voters? Do any notable patterns emerge when we examine the timing of these contributions?
+
+Answer: The days with the highest total donations for Harris were July 22nd ($370) and July 21st ($117.50). Notably, these dates follow Biden's decision to step down in favor of Harris. This pattern suggests that the initial excitement surrounding the transition to Harris could play a significant role in shaping the election outcome, reflecting the surge in support immediately after the switch.
+
+```{r}
+New_voters_join |>
+  group_by(date) |>
+  summarise(total_amount = sum(amount)) |>
+arrange(desc(total_amount))
+  
+  
+  
+```
+
