@@ -1,0 +1,175 @@
+---
+title: "Reverse Engineering Project"
+author: "Leonardo Micheli"
+date: "09-28-2024"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+In this notebook, we are reverse engineering the story, [Congress Today Is Older Than It's Ever Been](https://fivethirtyeight.com/features/aging-congress-boomers/)
+
+## Load libraries
+
+Loading required libraries for this analysis.
+
+```{r echo=FALSE, message=FALSE}
+install.packages('tidyverse')
+install.packages('rmarkdown')
+install.packages('janitor')
+library(tidyverse)
+library(janitor)
+```
+
+## Load and Cleaning Data
+
+In this section, describe the source of the data, write a basic data dictionary for data you are working with, and discuss any caveats or issues you discovered working with this data. 
+
+```{r}
+# Load required data
+congress_age <- read_csv("data/data_aging_congress.csv")
+# Path to data should be loaded from folder "data" i.e. read_csv("data/name_of_data.csv")
+
+# Clean required data and prepare for analysis if needed. 
+glimpse(congress_age)
+```
+
+## Sentences to Engineer
+In this notebook, we are reverse engineering five sentences from the story.
+
+### Sentence 1
+
+* **Sentence text**: [According to the 2020 census, the median age of the entire U.S. population was about 39, and among those 25 and older, it was 51 — *almost 22 and 10 years younger, respectively, than the median member of the 116th Congress was at the time.*]
+* 
+
+**Analysis summary**: [We were able to confirm that the median age of 116th congress is almost 22 years older than the median age of the entire population and is almost 10 years older than the median age of people who are 25 and older i.e., 39+22 = 61, 51+10 = 61 Our data reveals the median age to be 59. 
+
+We looked at the census data for 2020. src: https://data.census.gov/table/ACSST5Y2020.S0101?q=age%20in%202020 imported as 2020_census_age.csv in 'data' folder. The census data explicitly mentions 39 to be the median data in their csv table.
+
+We imported the census 2020 data and wanted to check the median age for people 25 and above. The 'united_states_total_estimate' column has the population for each age group. However, these have commas in them and the code reveals its a in character format. We removed the commas/any non numeric data and coerced it into a numeric data type. However, filtering just the 25 and above data groups returns a file with no observations. Not sure why that is. Maybe we would also have to account for how many people there are in each age group to find a weighted median, unsure how to proceed with that.] 
+
+```{r}
+# Put code to reverse engineer sentence here
+congress_age |>
+  filter(congress == "116") |>
+  summarise(
+    med_age_116 = median(age_years)
+  )
+# Display results of code below this codeblock
+58.98563
+```
+```{r}
+# Put code to reverse engineer sentence here
+census_2020_age <- read_csv("data/2020_census_age.csv")
+glimpse(census_2020_age)
+```
+```{r}
+cleaned_census_2020_age <- census_2020_age |>
+  clean_names()
+glimpse(cleaned_census_2020_age)
+```
+```{r}
+#the united_states_total_estimate column is chr
+cleaned_census_2020_age <- cleaned_census_2020_age |>
+  mutate(population = as.numeric(str_remove_all("united_states_total_estimate", "[^0-9]"))
+         #removing anything that is not a digit
+         )
+str(cleaned_census_2020_age)
+glimpse(cleaned_census_2020_age)
+#population is now numeric without commas
+```
+```{r}
+data_filtered <- cleaned_census_2020_age  |>
+  filter(`Label (Grouping)` %in% c(
+    "25 to 29 years", "30 to 34 years", "35 to 39 years", 
+    "40 to 44 years", "45 to 49 years", "50 to 54 years",
+    "55 to 59 years", "60 to 64 years", "65 to 69 years", 
+    "70 to 74 years", "75 to 79 years", "80 to 84 years", 
+    "85 years and over"
+  ))
+```
+
+### Sentence 2
+
+* **Sentence text**: [*Forty-eight percent of the current Congress is made up of boomers,* even though they only represented about 21 percent of the population in the most recent census. *And this actually represents a decline in representation for boomers, who made up 63 percent of Congress in the mid-2010s*]
+* **Analysis summary**: [We'll be able to confirm that 48.32% of members in the current Congress (118th Congress) are made up of boomers. Similarly, we can also confirm that 62.84% of members in the mid-2010s Congress (114th Congress which started in 2015) were made up of boomers.]
+
+```{r}
+# Put code to reverse engineer sentence here
+congress_age |>
+  filter(congress == "118") |>
+  summarise(
+    count_118 = n()
+  )
+congress_age |>
+  filter(congress == "118") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    count_118_boomers = n()
+  )
+(259/536)*100
+congress_age |>
+  filter(congress == "114") |>
+  summarise(
+    count_114 = n()
+  )
+congress_age |>
+  filter(congress == "114") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    count_114_boomers = n()
+  )
+(340/541)*100
+# Display results of code below this codeblock
+# The percentage of boomers in the 118th Congress is 48.3209
+# The percentage of boomers in the mid-2010s Congress (114th Congress started in 2015) was 62.84
+```
+
+### Sentence 3
+
+* **Sentence text**: [Paste in sentence to engineer here]
+* **Analysis summary**: [Write up two to three sentences describing the results of your analysis.  Were you able to confirm the finding? If not, why not?]
+
+```{r}
+# Put code to reverse engineer sentence here
+
+# Display results of code below this codeblock
+
+```
+
+### Sentence 4
+
+* **Sentence text**: [Paste in sentence to engineer here]
+* **Analysis summary**: [Write up two to three sentences describing the results of your analysis.  Were you able to confirm the finding? If not, why not?]
+
+```{r}
+# Put code to reverse engineer sentence here
+
+# Display results of code below this codeblock
+
+```
+
+### Sentence 5
+
+* **Sentence text**: [Paste in sentence to engineer here]
+* **Analysis summary**: [Write up two to three sentences describing the results of your analysis.  Were you able to confirm the finding? If not, why not?]
+
+```{r}
+# Put code to reverse engineer sentence here
+
+# Display results of code below this codeblock
+
+```
+
+-30-
