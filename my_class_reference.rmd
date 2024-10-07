@@ -260,6 +260,19 @@ texas_precinct_20 <- texas_precinct_20 |> mutate(election_day = as.numeric(elect
 #to change the datatype from characters to number is:
   maryland_zcta <- maryland_zcta |> mutate(across(ZCTA5N, as.character))
 
+  take out #total line --> unfilter 
+  take out #total column --> negative select
+  
+#if there are no column names
+    col_names = FALSE
+   --> benzie_2024 <- read_csv("data/tabula-Benzie Aug 6,2024 Official Precinct Results.csv", col_names = FALSE)
 
-
+#to delete rows for instance that have na:
+      filter(!is.na(name of the column)) |> 
+        
+#separate
+  --> separate what there is in the column. Then make a list of the columns name i want. and then sep= ' - ' 
+    e.g.,   separate(candidate, c("candidate", "party"), sep=' - ') |> 
+      
+#c introduce a list
     
