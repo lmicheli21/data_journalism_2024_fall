@@ -97,7 +97,7 @@ You can now export that extracted table to a CSV file using the "Export" button.
 
 ### Task 5: Export the CSV file
 
-**Task** Export the CSV file to your pre_lab_06 folder and read it into R by running the following codeblock. What problems do you see with the data? **Answer** The layout is significantly flawed. Many rows are blank or contain missing information, and actual data is being incorrectly used as column headers. For instance, "Pool Book Total" is being treated as a heading. Additionally, multiple pieces of data, like names and party affiliations, are placed within the same cell, creating confusion. This lack of clear separation between different types of information makes it difficult to interpret and analyze the data properly, as essential details are mixed up or incorrectly labeled.
+**Task** Export the CSV file to your pre_lab_06 folder and read it into R by running the following codeblock. What problems do you see with the data? **Answer** The layout is significantly flawed. Many rows are blank or contain missing information, and actual data is being incorrectly used as column headers. For instance, "Pool Book Total" is being treated as a heading. Additionally, multiple pieces of data, like names and party affiliations, are placed within the same cell, creating confusion. This lack of clear separation between different types of information makes it difficult to interpret and analyze the data properly, as essential details are mixed up or incorrectly labeled. 
 
 ```{r}
 benzie_2024 <- read_csv("data/tabula-Benzie Aug 6,2024 Official Precinct Results.csv")
