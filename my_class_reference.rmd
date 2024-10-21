@@ -293,4 +293,68 @@ md |>
        subtitle = "2018-2022 American Community Survey",
        y = "",
        x = "ACS estimate (bars represent margin of error)")
+
+##this and then  we need to tell ggplot what kind of chart to make.
+
+maryland_top_counties |>
+  ggplot()
+
+#everytime we need to put a "+" sign
+
+###to make bar chart with ggplot 
+
+maryland_top_counties |>
+  ggplot() +
+  geom_bar(aes(x=County, weight=UNAF_DIFF))
+
+geom bar() --> 
+  then inside () you put the aesthetics (aes(x = "whatever", weight (which stands for the y) = "whatever"))
+                                        if you put first "y" and successively weight the bar chart is horizontal
+
+#to reorder labels use the function reorder
+maryland_top_counties |>
+  ggplot() +
+  geom_bar(aes(x=reorder("County,UNAF_DIFF"), weight="UNAF_DIFF"))
+
+#or to flip the coordinates use coord_flip()
+maryland_top_counties |>
+  ggplot() +
+  geom_bar(aes(x=reorder("County,UNAF_DIFF"), weight="UNAF_DIFF")) +
+  coord_flip()
+
+#you can change the background theme using   theme_minimal() or theme_wp()... or theme _economist
+
+#to add a titles, x and y descriptions, and source use labs():
+labs(
+  title="Counties with Biggest Jumps in Unaffiliated Voters",
+  y = "net change",
+  x = "county",
+  caption = "source: Maryland State Board of Elections"
     
+####to make line chart with ggplot
+md_winred_by_date |>
+  ggplot() + 
+  geom_line(aes(x=date, y=total_contributions))
+
+# to change the nature of the x axes --> to change when the markers go use the function scale_x_date
+
+md_winred_by_date |>
+  ggplot() + 
+  geom_line(aes(x=date, y=total_contributions)) + 
+  scale_x_date(date_breaks = "1 week", date_labels = "%b %d")
+
+"%b" --> short for month
+"%d" --> short for day of the month
+
+#to personalized and layout the axis texts use axis.text.x = element_text(angle = 45 ?,  hjust=1 ?)
+
+md_winred_by_date |>
+  ggplot() + 
+  geom_line(aes(x=date, y=total_contributions)) + 
+  scale_x_date(date_breaks = "1 week", date_labels = "%b %d") +
+  theme(
+    axis.text.x = element_text(angle = 45,  hjust=1)
+  )
+
+
+

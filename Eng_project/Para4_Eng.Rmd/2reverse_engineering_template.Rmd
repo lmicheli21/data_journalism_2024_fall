@@ -1,0 +1,338 @@
+---
+title: "Reverse Engineering Project"
+author: "Leonardo Micheli"
+date: "09-28-2024"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+In this notebook, we are reverse engineering the story, [Congress Today Is Older Than It's Ever Been](https://fivethirtyeight.com/features/aging-congress-boomers/)
+
+## Load libraries
+
+Loading required libraries for this analysis.
+
+```{r echo=FALSE, message=FALSE}
+install.packages('tidyverse')
+install.packages('rmarkdown')
+install.packages('janitor')
+install.packages('lubridate')
+library(tidyverse)
+library(rmarkdown)
+library(janitor)
+library(lubridate)
+```
+
+## Load and Cleaning Data
+
+In this section, describe the source of the data, write a basic data dictionary for data you are working with, and discuss any caveats or issues you discovered working with this data. 
+
+```{r}
+# Load required data
+congress_age <- read_csv("data/data_aging_congress.csv")
+# Path to data should be loaded from folder "data" i.e. read_csv("data/name_of_data.csv")
+
+# Clean required data and prepare for analysis if needed. 
+glimpse(congress_age)
+```
+
+## Sentences to Engineer
+In this notebook, we are reverse engineering five sentences from the story.
+
+### Sentence 1
+
+* **Sentence text**: [According to the 2020 census,*the median age of the entire U.S. population was about 39, and among those 25 and older, it was 51 —* *almost 22 and 10 years younger, respectively, than the median member of the 116th Congress was at the time.*]
+* 
+
+**Analysis summary**: [We were able to confirm that the median age of 116th congress is almost 22 years older than the median age of the entire population and is almost 10 years older than the median age of people who are 25 and older i.e., 39+22 = 61, 51+10 = 61 Our data reveals the median age to be 59. 
+
+We looked at the census data for 2020. src: https://data.census.gov/table/ACSST5Y2020.S0101?q=age%20in%202020 imported as 2020_census_age.csv in 'data' folder. The census data explicitly mentions 39 to be the median data in their csv table.
+
+We imported the census 2020 data and wanted to check the median age for people 25 and above. The 'united_states_total_estimate' column has the population for each age group. However, these have commas in them and the code reveals its a in character format. We removed the commas, coerced it into a numeric data type, and filter just the 25 and above data groups. Nonetheless, since we don't have the age of each individual person but have only number of each of age group range, we're unsure how to proceed with that to find the median age.]
+
+```{r}
+# Put code to reverse engineer sentence here
+congress_age |>
+  filter(congress == "116") |>
+  summarise(
+    med_age_116 = median(age_years)
+  )
+# Display results of code below this codeblock
+58.98563
+```
+```{r}
+# Put code to reverse engineer sentence here
+census_2020_age <- read_csv("data/2020_census_age.csv")
+glimpse(census_2020_age)
+```
+```{r}
+cleaned_census_2020_age <- census_2020_age |>
+  clean_names()
+glimpse(cleaned_census_2020_age)
+```
+```{r}
+#the united_states_total_estimate column is chr
+cleaned_census_2020_age <- cleaned_census_2020_age |>
+  mutate(population = str_remove_all(united_states_total_estimate, ",")) |> #remove the commas
+  mutate(population = as.numeric(population))
+glimpse(cleaned_census_2020_age)
+#population is now numeric without commas
+```
+```{r}
+cleaned_census_2020_age  |>
+  mutate(label_grouping = str_trim(label_grouping)) |>
+  filter(label_grouping %in% c(
+    "25 to 29 years", "30 to 34 years", "35 to 39 years", 
+    "40 to 44 years", "45 to 49 years", "50 to 54 years",
+    "55 to 59 years", "60 to 64 years", "65 to 69 years", 
+    "70 to 74 years", "75 to 79 years", "80 to 84 years", 
+    "85 years and over"
+  ))
+```
+### Sentence 2
+
+* **Sentence text**: [*Forty-eight percent of the current Congress is made up of boomers,* even though they only represented about 21 percent of the population in the most recent census. *And this actually represents a decline in representation for boomers, who made up 63 percent of Congress in the mid-2010s*]
+
+* **Analysis summary**: [We'll be able to confirm that 48.32% of members in the current Congress (118th Congress) are made up of boomers. Similarly, we can also confirm that 62.84% of members in the mid-2010s Congress (114th Congress which started in 2015) were made up of boomers.]
+
+```{r}
+# Put code to reverse engineer sentence here
+congress_age |>
+  filter(congress == "118") |>
+  summarise(
+    count_118 = n()
+  )
+congress_age |>
+  filter(congress == "118") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    count_118_boomers = n()
+  )
+(259/536)*100
+congress_age |>
+  filter(congress == "114") |>
+  summarise(
+    count_114 = n()
+  )
+congress_age |>
+  filter(congress == "114") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    count_114_boomers = n()
+  )
+(340/541)*100
+# Display results of code below this codeblock
+
+# The percentage of boomers in the 118th Congress is 48.3209
+# The percentage of boomers in the mid-2010s Congress (114th Congress started in 2015) was 62.84
+```
+
+### Sentence 3
+
+* **Sentence text**: [Thanks to their size, baby boomers have been an especially long-lasting force in congressional politics. *Boomers are now in their 25th consecutive Congress,4 but still make up about half the membership,* putting them well ahead of earlier generations. *In its 25th Congress, the Silent Generation only made up about one-third of Congress,* *while the earlier Lost Generation made up only around a quarter at the same point.*5]
+
+* **Analysis summary**: [The result can confirm the findings stated in the story. The proportion of Boomers in its 25th Congress is about half of all members (48.329%). The proportion of Silent Generation in its 25th Congress was about one-third of all members (32.06%). The proportion of Lost Generation in its 25th Congress was about a quarter of all members (11.05%).]
+
+```{r}
+# Put code to reverse engineer sentence here
+#Find the proportion of Boomers in its 25th congress which I assume that is the current congress (118th congress) as the story said that Boomer are 'now' in their 25th Congress. 
+congress_age |>
+  filter(congress == "118") |>
+  summarise(
+    count_118 = n()
+  )
+congress_age |>
+  filter(congress == "118") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    count_118_boomers = n()
+  )
+(259/536)*100
+
+#Find the proportion of Silent Generation in its 25th congress
+#Find its 25th congress first 
+congress_age |>
+  filter(generation == "Silent") |>
+  group_by(congress) |>
+  summarise(
+    count_congress = n())
+#This could mean first appearance of Silent Generation in Congress was in 86th Congress, so the 25th appearance was in 110th congress 
+congress_age |>
+  filter(congress == "110") |> 
+  summarise(
+    count_110 = n()
+  )
+congress_age |>
+  filter(congress == "110") |>
+  filter(generation == "Silent") |>
+  summarise(
+    count_110_silent = n())
+(176/549)*100
+
+#Find the proportion of Lost Generation in its 25th congress
+#Find its 25th congress first 
+congress_age |>
+  filter(generation == "Lost") |>
+  group_by(congress) |>
+  summarise(
+    count_congress = n())
+#This could mean first appearance of Lost Generation in Congress was in 66th Congress, so the 25th appearance was in 90th congress 
+congress_age |>
+  filter(congress == "90") |> 
+  summarise(
+    count_90 = n()
+  )
+congress_age |>
+  filter(congress == "90") |>
+  filter(generation == "Lost") |>
+  summarise(
+    count_90_lost = n())
+(60/543)*100
+
+# Display results of code below this codeblock
+
+#The proportion of Boomers in its 25th congress is 48.3209%
+#The proportion of Silent Generation in its 25th congress was 32.05829%
+#The proportion of Lost Generation in its 25th congress was 11.04972%
+```
+
+### Sentence 4
+
+* **Sentence text**: [But on top of the baby boomers’ outsized congressional representation, they’re also older than their predecessors in the Lost, Greatest and Silent generations were when those groups held the most sway on Capitol Hill. *When boomers became a plurality of Congress in 2001, their median age was nearly 49,* *six years older than the Silent Generation was when it became the largest generational cohort in 1979.* *And while the Silent Generation’s median age was 59 just before the boomers surpassed it in Congress,* *today the boomers’ median age is a whopping 66.* It’s no wonder, then, that Congress is notably older today.]
+
+* **Analysis summary**: [The result confirms the findings stated in the story. The median age of Boomers in the 2001 Congress was 48.55, which is 5.49 years older than the median age of the Silent Generation in the 1979 Congress (43.06). In the 116th Congress, which was the year before the number of Boomers exceeded the number of Silent Generation, the median age of the Silent Generation in that year's Congress was 59.18. And the median age of Boomers in the 106th Congress is 66.33.]
+
+```{r}
+# Put code to reverse engineer sentence here
+#Find the median age of Boomers in 2001 Congress.
+congress_age |>
+  filter(start_date == "2001-01-03") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    med_age_boomer = median(age_years)
+  )
+
+#Find the median age of Silent Generation in 1979 Congress.
+congress_age |>
+  filter(start_date == "1979-01-03") |>
+  filter(generation == "Silent") |>
+  summarise(
+    med_age_silent = median(age_years)
+  )
+
+#Confirm that in the year before number of Boomers surpassed the number of Silent Generation, the median age of Silent Generation in that year's Congress is 59. 
+#Find that year first
+congress_age |>
+  group_by(congress, generation) |>
+  summarise(
+    count_cong_gen = n()
+  ) |>
+  filter(generation %in% c("Silent", "Boomers"))
+#Found that 106th Congress was the last congress that there were more Silent (252) than Boomers (251)
+#Find the median age of Silent Generation in 106th Congress.
+congress_age |>
+  filter(congress == "106") |>
+  filter(generation == "Silent") |>
+  summarise(
+    med_age_silent = median(age_years)
+  )
+
+#Find the median age of Boomers in today Congress.
+congress_age |>
+  filter(congress == "118") |>
+  filter(generation == "Boomers") |>
+  summarise(
+    med_age_boomer = median(age_years)
+  )
+
+# Display results of code below this codeblock
+
+#The median age of Boomers in 2001 Congress was 48.55.
+#The median age of the Silent Generation in the 1979 Congress was 43.06.
+#In the 116th Congress which was the year before the number of Boomers surpassed the number of the Silent Generation, the median age of the Silent Generation in that year's Congress was 59.18.
+#The median age of Boomers in the 106th Congress is 66.33.
+```
+
+### Sentence 5
+
+* **Sentence text**: [Don’t expect such unfamiliarity to change anytime soon: As it turns out, Congress today is older than it’s ever been.*Across all senators and representatives, the median age of the 118th Congress is 59 years old.* 
+*The median senator is 65 years old, a record high;* *the median representative is about 58,* *for the fourth Congress in a row.1* Congress has notably aged since 2001:*From 1919 to 1999, the median senator never eclipsed 60 years old* 
+*and the median representative never surpassed 55.2* ]
+
+* **Analysis summary**: [The result confirms the findings stated in the story. The median age of all members in the 118th Congress is 59.07, and the median age of that Congress's senators, and representatives are 65.26 and 57.84 respectively. In addition, the median age of representatives in three previous Congress are 58.23, 57.83, and 58.13 respectively. Lastly, the median age of senators from each Congress that was in 1919 to 1999 spanned from 51.68 to 59.91 (never eclipsed 60), and the median age of senators from each Congress in that same interval spanned from 48.36 to 54.51 (never surpassed 55.2).]
+
+```{r}
+# Put code to reverse engineer sentence here
+#Find the median age of 118th Congress
+congress_age |>
+  filter(congress == "118") |>
+  summarise(
+    count_med_age = median(age_years)
+  )
+
+#Find the median age of 118th Congress's senators.
+congress_age |>
+  filter(congress == "118") |>
+  filter(chamber == "Senate") |>
+  summarise(
+    count_med_age = median(age_years)
+  )
+
+#Find the median age of 118th Congress's representatives.
+congress_age |>
+  filter(congress == "118") |>
+  filter(chamber == "House") |>
+  summarise(
+    count_med_age = median(age_years)
+  )
+
+#Find the median age of representatives in three previous Congress.
+congress_age |>
+  filter(congress %in% c("117", "116", "115")) |>
+  filter(chamber == "House") |>
+  group_by(congress) |>
+  summarise(
+    count_med_age = median(age_years)
+  )
+
+#Find the median age of senators from each Congress that were in 1919 - 1999. 
+congress_age |>
+  filter(start_date <= "1999-01-03") |>
+  filter(chamber == "Senate") |>
+  group_by(congress) |>
+  summarise(
+    count_med_age = median(age_years)
+  ) |>
+  arrange(desc(count_med_age))
+  
+#Find the median age of representatives from each Congress that were in 1919 - 1999. 
+congress_age |>
+  filter(start_date <= "1999-01-03") |>
+  filter(chamber == "House") |>
+  group_by(congress) |>
+  summarise(
+    count_med_age = median(age_years)
+  ) |>
+  arrange(desc(count_med_age))
+
+# Display results of code below this codeblock
+
+#The median age of 118th Congress is 59.07.
+#The median age of 118th Congress's senators is 65.26.
+#The median age of 118th Congress's representatives is 57.84.
+#The median age of 117th, 116th, and 115th Congress representatives is 58.23, 57.83, and 58.13 respectively.
+#The median age of senators from each Congress that was in 1919 to 1999 spanned from 51.68 to 59.91.
+#The median age of representatives from each Congress that was in 1919 to 1999 spanned from 48.36 to 54.51.
+```

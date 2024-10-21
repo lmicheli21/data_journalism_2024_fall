@@ -32,12 +32,12 @@ We'll be working with the [Maryland monthly voter registration update](https://e
 
 Start Tabula, then go to <http://127.0.0.1:8080/> in your browser. Click the "Browse" button and find the PDF file and click "open", and then click the "Import button" in Tabula. This will take a few seconds.
 
-This PDF has multiple possible tables to extract. We're going to make four dataframes: 
+This PDF has multiple possible tables to extract. We're going to make four dataframes:
 
-* new registrations by party
-* removals by party
-* changes in registration
-* current registrations by county.
+-   new registrations by party
+-   removals by party
+-   changes in registration
+-   current registrations by county.
 
 You will need to draw boxes around four sections and export four CSV files that you will load into R. In Tabula, draw a box around the borders of those tables and click the "Preview & Export Extracted Data" button for each one. The export should look pretty clean, but might be missing some column headers. You'll need to include total columns.
 
@@ -51,79 +51,89 @@ You will need to read in and clean up the data so that it can be used for analys
 
 ```{r}
 # Party registrations
-Party_Registration <- read_csv("data/Tabula-Party_Registration-2024_09.csv", col_names = FALSE)
-View(Party_Registration)
+party_Registration <- read_csv("data/1tabulaRegistrations-2024_09.csv") |> clean_names()
+party_Registration <- party_Registration |> 
+  rename(category=x1) |>
+  rename(dem24 = dem, rep24 = rep, lib24 = lib, grn24 = grn, unaf24 = unaf, oth24 = oth, nlm24 = nlm, total24 = total)
+
+View(party_Registration)
 ```
-
-
-
-```{r}
-Clean_Party_Registration <- Party_Registration |>
-  slice(-c(1, 2)) |>
-  rename(
-    Registration_Type = X1,
-    DEM = X2,
-    REP = X3,
-    NLM = X4,
-    LIB = X5,
-    GRN = X6,
-    UNAF = X7,
-    OTH = X8,
-    TOTAL = X9,
-    DUPS = X10
-  ) |>
-  select(-X11) |>
-  filter(!if_all(everything(), is.na))
-```
-
-```{r}
-Clean_Party_Registration |>
-  mutate_if(is.character, 
-            ~ as.numeric(gsub(",", "", .)))
-
-#I had to search online for how to remove the first two rows and convert commas to decimal points. I tried various methods we previously covered, but none of them worked as expected.I would like to review on these.   
-```
-
 
 ```{r}
 # Removals
+removals <- read_csv("data/tabula-removals24.csv") |> clean_names()
+removals <- removals |> 
+  filter(!if_all(everything(), is.na)) |>
+  rename(category=x1)
 
 ```
 
 ```{r}
 # Changes
+changes <- read_csv("data/tabula-changes2024_09.csv") |> clean_names()
+
+changes <- changes |> 
+  rename(county = x1)
+
 
 ```
 
 ```{r}
 # Current registrations
+current_registrations <- read_csv("data/tabula-Current_registrations2024_09.csv") |> 
+  select(-c(2,3,4,5,6,7,8,9,10,11)) |> 
+  clean_names()
+
+current_registrations <- current_registrations |> 
+  rename(county = x1) |>
+  rename(dem24 = dem_12, rep24 = rep_13, nlm23 = nlm_14, lib24 = lib_15, grn24 = grn_16, unaf24 = unaf_17, oth24 = oth_18, total24 = total_19)
+
 
 ```
 
 ## Rinse, Repeat: September 2022 data
 
-Do all of that again, for the [September 2022 voter registration update](https://elections.maryland.gov/pdf/vrar/2022_09.pdf), so we can compare the two. If you've done well, this is easy: just do the same steps in Tabula, export the files and use the same code to read in and clean up the data, *just remember to give these dataframes different names* so that you can compare September 2024 to September 2022.
+Do all of that again, for the [September 2022 voter registration update, so we can compare the two. If you've done well, this is easy: just do the same steps in Tabula, export the files and use the same code to read in and clean up the data, *just remember to give these dataframes different names* so that you can compare September 2024 to September 2022.
 
 To answer the following questions, you'll need to calculate percentages and do other calculations. Whether you do that by combining or joining dataframes or you write code to run separately on both is up to you.
 
 ```{r}
 # Party registrations
+Party_Registration22 <- read_csv("data/tabulanewregistrations-2022_09.csv") |> clean_names()
+Party_Registration22 <- Party_Registration22 |> 
+  rename(category=x1) |>
+  rename(dem22 = dem, rep22 = rep, lib22 = lib, grn22 = grn, unaf22 = unaf, oth22 = oth, wcp22 = wcp, total22 = total)
 
+View(Party_Registration22)
 ```
 
 ```{r}
 # Removals
-
+Removals22 <- read_csv("data/tabularemovals-2022_09.csv") |> clean_names()
+Removals22 <- Removals22 |> 
+  filter(!if_all(everything(), is.na)) |>
+  rename(category = x1)
+  
 ```
 
 ```{r}
 # Changes
+Changes22 <- read_csv("data/tabula-changes2022_09.csv") |> clean_names()
 
+Changes22 <- Changes22 |> 
+  rename(county = x1)
 ```
 
 ```{r}
 # Current registrations
+Current_registrations22 <- read_csv("data/tabulaactiveregistrations-2022_09.csv") |> 
+  
+  select(-c(2,3,4,5,6,7,8,9,10,11)) |> 
+  clean_names()
 
+Current_registrations22 <- Current_registrations22 |> 
+ rename(county = x1) |> 
+ rename(dem22 = dem_12, rep22 = rep_13, grn22 = grn_14, lib22 = lib_15, wcp22 = wcp_16, unaf22 = unaf_17, oth22 = oth_18, total22 = total_19)
 ```
 
 ## Answer questions
@@ -133,7 +143,18 @@ Q1. Calculate the percentage of registered Democrats, Republicans and unaffiliat
 A1.
 
 ```{r}
+current_registrations <- current_registrations |>
+  mutate(pct_dem24 = (dem24/total24)*100, pct_rep24 = (rep24/total24)*100, pct_unaffil24 = (unaf24/total24)*100)
 
+Current_registrations22 <- Current_registrations22 |> 
+  mutate(pct_dem22 = (dem22/total22)*100, pct_rep22 = (rep22/total22)*100, pct_unaffil22 = (unaf22/total22)*100)
+```
+
+```{r}
+registration_comparison <- current_registrations |> 
+  left_join(Current_registrations22, by= 'county') |> 
+  mutate(dem_change = (dem24-dem22)/dem22*100, rep_change = (rep24-rep22)/rep22*100, unaffil_change = (unaf24-unaf22)/unaf22*100) |> 
+  arrange(desc(unaffil_change))
 ```
 
 Q2. Among the Maryland jurisdictions with the most registered voters, which one had the biggest percentage increase in unaffiliated voters between 2022 and 2024? How did that county vote for governor in 2022 and for president in 2020? Contrast the partisan percentages of that county with the county that had the eighth-largest percentage increase in unaffiliated voters. You should display information from the data that shows the counties with the largest percentage increase first.
