@@ -140,7 +140,7 @@ Current_registrations22 <- Current_registrations22 |>
 
 Q1. Calculate the percentage of registered Democrats, Republicans and unaffiliated voters for the entire state in September 2024 and September 2022, and then calculate the percentage change for those three party categories (the formula for percentage change is easy to remember: (New-Old)/Old). How would you describe the changes in these partisan categories in a story? What's the most interesting thing about these changes that would be the lede of that story?
 
-A1.
+A1.What immediately stood out to me is the presence of numerous negative changes in Democratic registration, while only five counties show a percentage loss for the Republican party. This highlights a trend of growing Republican support, even in a predominantly Democratic state like Maryland. However, what's even more notable is the significant rise in unaffiliated voters over the past year, indicating a shift toward independent or nonpartisan affiliations.
 
 ```{r}
 current_registrations <- current_registrations |>
@@ -159,9 +159,14 @@ registration_comparison <- current_registrations |>
 
 Q2. Among the Maryland jurisdictions with the most registered voters, which one had the biggest percentage increase in unaffiliated voters between 2022 and 2024? How did that county vote for governor in 2022 and for president in 2020? Contrast the partisan percentages of that county with the county that had the eighth-largest percentage increase in unaffiliated voters. You should display information from the data that shows the counties with the largest percentage increase first.
 
-A2.
+A2. Among the Maryland counties with the most registered voters, Prince George's County is the one with the biggest percentage increase in unafilliated voters between 2022 and 2024 with 17.2%. Moreover, Prince George's county in 2022 for governor voted for Wes Moore, while for president in 2020 for Joe Biden, both democrats. 
+When compared to Montgomery County, which ranks eighth in the percentage increase of unaffiliated voters, Prince George's County shows a similar trend for Democrats, with both counties losing around 1.7% of Democratic voters. However, the difference in Republican voter growth is significant: Prince George's saw a 5.6% increase in Republican voters from 2022 to 2024, compared to just a 0.6% increase in Montgomery County. 
+
 
 ```{r}
+registration_comparison |> 
+  filter(total24 > 100000) |> 
+  arrange(desc(unaffil_change))
 
 ```
 
@@ -169,20 +174,68 @@ Q3. Do the party percentages of new registrants (% Dem, % Rep, % Unaffiliated) f
 
 In other words, did new registrants mirror the overall partisan composition of the electorate, or were they different? Do any of the methods of registration vary significantly from the overall partisan pattern? Which method is worthy of further exploration?
 
-A3.
+A3. In 2024, new registrants for the Democratic Party made up approximately 61.5% of the total, Republicans 16.5%, and unaffiliated voters 20.5%. In contrast, in 2022, Democratic new registrants accounted for 54.5%, Republicans 16.6%, and unaffiliated voters 26.6%. This reveals a notable improvement for the Democratic Party over the past year, while Republican registration remained stable and unaffiliated registrations dropped by more than 5%.
+When comparing the overall voter distribution in 2022, where Democrats comprised 54%, Republicans 24%, and unaffiliated voters 20%, the new registrant data highlights a decrease in Republican registrations and an increase in unaffiliated voters, while Democratic numbers stayed consistent.
+Furthermore, in 2024, total voter data shows Democrats at 52%, Republicans at 24%, and unaffiliated voters at 22%. New registrant trends indicate a stronger gain for Democrats, a slight decline for Republicans, and a noticeable drop in unaffiliated voters compared to prior years. 
 
 ```{r}
+current_registrations <- current_registrations |> 
+  mutate(pct_dem24 = (dem24/total24)*100, pct_rep24 = (rep24/total24)*100, pct_unaffil24 = (unaf24/total24)*100)
 
+Current_registrations22 <- Current_registrations22 |>
+  mutate(pct_dem22 = (dem22/total22)*100, pct_rep22 = (rep22/total22)*100, pct_unaffil22 = (unaf22/total22)*100)
+
+party_Registration <- party_Registration |> 
+  mutate(pct_dem24 = (dem24/total24)*100, pct_rep24 = (rep24/total24)*100, pct_unaffil24 = (unaf24/total24)*100)
+
+Party_Registration22 <- Party_Registration22 |> 
+  mutate(pct_dem22 = (dem22/total22)*100, pct_rep22 = (rep22/total22)*100, pct_unaffil22 = (unaf22/total22)*100)
 ```
 
 Q4. Choose your own adventure! Using both the 2024 and 2022 data for one of the dataframes (changes, removals or new registrations), ask and answer a question that makes at least one comparison and requires code to answer. That could involve calculating a percentage, percentage change or the raw difference between two columns.
 
-A4.
+What is the percentage change in Democratic, Republican, and Unaffiliated voter registrations between 2022 and 2024 in the five wealthiest counties in Maryland (Howard, Montgomery, Anne Arundel, Calvert, and Queen Anne)? Do these counties follow the same voter trends as the rest of the state? 
+
+A4. It's interesting to observe that in the wealthiest counties, the number of registered voters identifying as unaffiliated is on the rise, indicating a positive trend. In contrast, both Republican and Democratic parties are experiencing a slight decline in their voter bases, even if these changes are marginal. This trend is also evident in other counties, suggesting that financial dependence is not a determining factor in this shift.
+For example, Howard County has seen a loss of 0.95% in Democratic registrations and a 0.91% loss in Republican registrations, while unaffiliated voters have increased by 1.75%. Similarly, when looking at the other counties collectively, there is a decline of 1.6% for Democrats and 0.14% for Republicans, alongside a positive trend of 1.6% for unaffiliated voters.
 
 ```{r}
+wealthy_current_registrations24 <- current_registrations |> 
+  filter(county %in% c("HOWARD", "MONTGOMERY", "ANNE ARUNDEL", "CALVERT", "QUEEN ANNE'S"))
+
+
+wealthy_current_registrations22 <- Current_registrations22 |> 
+  filter(county %in% c("HOWARD", "MONTGOMERY", "ANNE ARUNDEL", "CALVERT", "QUEEN ANNE'S"))
 
 ```
 
+```{r}
+wealthy_registration_change <- left_join(wealthy_current_registrations24, wealthy_current_registrations22, by = "county")
+
+wealthy_registration_change <- wealthy_registration_change |> 
+  mutate(pct_change_dem = (pct_dem24 - pct_dem22),
+         pct_change_rep = (pct_rep24 - pct_rep22),
+         pct_change_unaf = (pct_unaffil24 - pct_unaffil22))
+```
+
+```{r}
+other_counties24 <- current_registrations |> 
+  filter(!county %in% wealthy_registration_change)
+
+other_counties22 <- Current_registrations22 |> 
+  filter(!county %in% wealthy_registration_change)
+```
+
+```{r}
+other_counties_change <- left_join(other_counties24, other_counties22, by = "county")
+
+other_counties_change <- other_counties_change |> 
+  mutate(pct_change_dem = (pct_dem24 - pct_dem22),
+         pct_change_rep = (pct_rep24 - pct_rep22),
+         pct_change_unaf = (pct_unaffil24 - pct_unaffil22))
+```
+
+
 Q5. What's the best story idea or question you've seen as a result of the work you've done in this lab?
 
-A5.
+A5. In my opinion, the most interesting insight from this lab is the  rise of unaffiliated voters. From an European (thus a multi-partisan perspective), it made me thinking about how this trend might suggests that a growing number of individuals  do not align with the traditional two-party system, signaling a potential shift in political behavior and preferences. I am aware that this is an anti-historical analysis, however it clearly shows an evident discontent from American citizens. It raises interesting questions about the future dynamics of elections, especially in a state like Maryland, where partisan loyalty has historically been strong. The growth of unaffiliated voters could indicate a desire for more independent or issue-based candidates, reflecting broader national trends of political disengagement from established parties.
