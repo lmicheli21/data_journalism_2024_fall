@@ -356,5 +356,3 @@ md_winred_by_date |>
     axis.text.x = element_text(angle = 45,  hjust=1)
   )
 
-
-
