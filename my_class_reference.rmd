@@ -356,3 +356,8 @@ md_winred_by_date |>
     axis.text.x = element_text(angle = 45,  hjust=1)
   )
 
+#to create a new csv file of changes you made you have to use write_csv()
+
+write_csv(md_gov_county [dataframe changed], "data/md_gov_county.csv" [dataframe before])
+
+
