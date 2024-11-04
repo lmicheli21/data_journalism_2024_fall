@@ -360,4 +360,12 @@ md_winred_by_date |>
 
 write_csv(md_gov_county [dataframe changed], "data/md_gov_county.csv" [dataframe before])
 
+# with maps base layers go first and more details go after. 
+ggplot() +
+  geom_sf(data=md_counties |> filter(COUNTYFP == "033")) +
+  geom_sf(data=pg_precincts) +
+  theme_minimal()
+
+
+
 
