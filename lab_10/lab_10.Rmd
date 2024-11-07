@@ -1,0 +1,234 @@
+---
+title: "lab_10"
+author: "Leonardo Micheli"
+date: "2024-11-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## You will need
+
+-   the tidyverse, janitor and tigris libraries
+-   you might choose to use the tidycensus library for Q3
+
+## Load libraries and establish settings
+
+**Task** Create a codeblock and load appropriate packages and settings for this lab.
+
+```{r}
+# Turn off scientific notation
+options(scipen=999)
+
+# Load libraries
+library(tidyverse)
+library(sf)
+library(janitor)
+library(tigris)
+```
+
+Let's explore the election results from last night and make some maps!
+
+## Questions
+
+**Q1.** Make a county-level map of Maryland's results for U.S. Senate using `md_senate_county_24.csv` in the data folder, calculating the difference between Angela Alsobrooks's percentage of the total votes and Larry Hogan's percentage of the total votes and displaying that percentage difference on the map. What is the story here, and what is the county with the most interesting results?
+
+**A1.** The biggest difference between Prince George's and Baltimore counties compared to most other counties is the higher percentage of voters who supported Alsobrooks over Hogan. In these counties, which are the most populated ones with the largest urban centers (with Montgomery county), Alsobrooks garnered more votes. In contrast, most other counties in the region leaned more towards Hogan. This trend reflects the political preferences of urban areas, where Alsobrooks, likely benefiting from more diverse populations and progressive ideologies, performed better. Meanwhile, less urbanized counties tended to favor Hogan, aligning with more conservative or traditional preferences.
+
+```{r}
+#load counties
+counties <- counties()
+
+glimpse(counties)
+```
+```{r}
+#load MD
+md_counties <- counties |>
+  filter(STATEFP == "24")
+```
+
+```{r}
+#clean
+md_counties <- md_counties |> clean_names()
+```
+
+
+```{r}
+md_senate_county_24 <- read_csv("data/md_senate_county_24.csv") |> clean_names()
+
+
+glimpse(md_senate_county_24)
+```
+```{r}
+md_senate_county_24 <- md_senate_county_24 |>
+  mutate(across(geoid, as.character))
+```
+
+
+```{r}
+#find percentages
+md_senate_county_24 <- md_senate_county_24 |>
+  mutate(
+    total = alsobrooks + hogan + scott,
+    pct_alsobrooks = (alsobrooks/total)*100,
+    pct_hogan = (hogan/total)*100,
+    pct_difference = pct_alsobrooks - pct_hogan,
+    )
+  
+```
+
+
+
+```{r}
+#load map
+md_counties |> 
+  ggplot() +
+  geom_sf() +
+  theme_minimal()
+```
+```{r}
+map_md_counties <- md_counties |> inner_join(md_senate_county_24, join_by(geoid))
+
+```
+
+```{r}
+ggplot() +
+  geom_sf(data=map_md_counties, aes(fill=pct_difference)) +
+  scale_fill_viridis_b(option="magma") +
+  theme_minimal()
+
+#What is the story here, and what is the county with the most interesting results?
+```
+
+
+
+**Q2.** Make a county-level map showing the difference between Donald Trump's county-level performance this year and Larry Hogan's, using percentages to compare the two as you did in Q1. You can use the dataframe you initially loaded for Q1, and you'll need to load the 2024 presidential results in the data folder and join them to it before proceeding. Are there any counties where Trump got a higher percentage than Hogan? How would you describe the map showing the Trump-Hogan difference?
+
+Also answer this: is a map the best way to present this data? What else could you make that might convey more information?
+
+**A2.** Interestingly, Hogan received more votes in almost every county except Allegany County, which leans more conservative within Maryland. Allegany is a stronghold for Trump, who outperformed Hogan there. Additionally, there is a notable “belt” of counties - Montgomery, Howard, and Anne Arundel - where Hogan’s support significantly surpasses that of Trump. This pattern is particularly interesting, as these three counties are among the wealthiest in the state. This highlights how voter preferences in Maryland (and in the USA) can vary dramatically by geography, and classes.
+
+Another effective way to present these results is by using a line graph. This type of chart makes percentage changes over time very clear, directly illustrating specific trends and patterns. A line graph would be especially useful for highlighting the three counties where Hogan has significantly more support than Trump, setting them apart from other counties and drawing attention to these unique cases.
+
+```{r}
+md_pres_county_24 <- read_csv("data/md_pres_county_24.csv") |> clean_names()
+```
+
+```{r}
+md_pres_county_24 <- md_pres_county_24 |>
+    mutate(across(geoid, as.character))
+```
+
+
+```{r}
+map_trump_hogan <- map_md_counties |> inner_join(md_pres_county_24, join_by(geoid))
+```
+
+```{r}
+map_trump_hogan <- map_trump_hogan |>
+  mutate(
+    total_pres = trump + harris + oliver + stein + kennedy,
+    pct_trump = (trump/total_pres)*100,
+    pct_difference_t_h = pct_trump - pct_hogan
+  )
+```
+
+
+```{r}
+ggplot() +
+  geom_sf(data=map_trump_hogan, aes(fill=pct_difference_t_h)) +
+  scale_fill_viridis_b(option="magma") +
+  theme_minimal()
+```
+
+
+**Q3** Make another map showing the difference between Larry Hogan's county-level performance this year and from his governor race in 2018, using percentages to compare the two as you did in Q2. You can use the dataframe you initially loaded for Q1, and you'll need to load the 2018 governor results in the data folder and join them to it before proceeding. Are there any counties where Hogan did better this year? How would you describe the map showing the difference?
+
+**A3** Hogan did not perform better in any county this year compared to 2018, with a significant decline in support across the board. In Talbot County, for example, he saw a drop of over 16%. This downward trend could be attributed to several factors: Hogan's moderate stance may have alienated some conservative voters, especially in the wake of a shifting political landscape.
+
+```{r}
+#load data
+md_gov_county_18 <- read_csv("data/md_gov_county_18.csv") |> clean_names()
+
+
+```
+
+```{r}
+md_gov_county_18 <- md_gov_county_18 |>
+  mutate(
+    total = jealous + hogan + quinn + schlakman + write_ins,
+    pct_hogan_18 = (hogan/total)*100,
+    across(geoid, as.character)
+  )
+```
+
+```{r}
+#join data
+map_md_hogan_18_24 <- map_trump_hogan |> left_join(md_gov_county_18, join_by(geoid))
+
+```
+
+
+```{r}
+map_md_hogan_18_24 <- map_md_hogan_18_24 |>
+  mutate(pct_difference_hogan = pct_hogan - pct_hogan_18)
+
+```
+
+
+```{r}
+#map
+
+ggplot() +
+  geom_sf(data=map_md_hogan_18_24, aes(fill=pct_difference_hogan)) +
+  scale_fill_viridis_b(option="magma") +
+  theme_minimal()
+
+```
+
+
+**Q4.** Choose your own map adventure! In the data folder I've included Maryland county-level results for the abortion rights amendment vote this year, plus the 2020 presidential results by county and 2022 governor's results by county. Using one of those and at least one other contest for comparison, make a county-level map showing what you think is the most interesting aspect of that data, and describe the results in terms of a possible story. You can bring in other data, such as Census information, if you like.
+
+**A4.** To gain additional insights from the previous answer (A3), I wanted to examine whether a more conservative perspective is gaining traction in Maryland - hence, if Trump’s support has been increasing. I compared most recent Trump voters with his support in the 2020 elections across Maryland’s counties. Interestingly, Trump has gained ground in every county, with a particularly notable rise in Cecil County. This pattern suggests a shift toward a more conservative stance within Maryland’s Republican base, which could explain Hogan's drop in support. Voters may be gravitating toward a more traditionally conservative approach than Hogan’s moderate Republicanism, aligning more with Trump’s brand of politics. This trend reveals an evolving landscape in Maryland where Hogan’s centrist appeal may no longer resonate as strongly with a growingly conservative voter base.
+
+```{r}
+#load pres 20
+
+md_pres_county_20 <- read_csv("data/md_pres_county_20.csv") |> clean_names()
+
+```
+
+```{r}
+#find percentage of trump
+md_pres_county_20 <- md_pres_county_20 |>
+  mutate(
+    total_pres_20 = trump + biden + jorgensen + hawkins + segal,
+    pct_trump_20 = (trump/total_pres_20)*100,
+        across(geoid, as.character)
+  )
+```
+
+```{r}
+#join with 24
+map_trump_20_24 <- map_trump_hogan |> inner_join(md_pres_county_20, join_by(geoid))
+```
+
+```{r}
+map_trump_20_24 <- map_trump_20_24 |>
+  mutate(pct_difference_trump = pct_trump - pct_trump_20)
+
+```
+
+
+```{r}
+#create map
+
+ggplot() +
+  geom_sf(data=map_trump_20_24 , aes(fill=pct_difference_trump)) +
+  scale_fill_viridis_b(option="magma") +
+  theme_minimal()
+
+```
+
