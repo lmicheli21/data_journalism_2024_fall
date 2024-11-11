@@ -366,5 +366,32 @@ ggplot() +
   geom_sf(data=pg_precincts) +
   theme_minimal()
 
+#pres_url keeps the url visible
+
+#read_html
+#html_table
+
+#results <- results[[1]] --> [[number]] means the first item
+
+#to take out rows you use:
+   slice(-*umber of the row*)
+   
+#gsub substitute with characters
+   e.g.,
+     mutate(harris = as.numeric(gsub(",","", harris)))
+   
+#html_elements('li') takes all the lists, html_element('li') takes the first
+   
+#tibble() makes dataframe
+  committees <- cmte_results |> html_elements("li a")
+  committees_with_urls <- tibble(
+  name = committees %>% html_text(trim = TRUE),   --> this means get rid of extra things
+  url = committees %>% html_attr("href")          --> 
+)
+
+#  "^/" means a the beginning
+
+
+
 
 
