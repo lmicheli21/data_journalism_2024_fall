@@ -1,0 +1,242 @@
+---
+title: "lab_11"
+author: "Leonardo Micheli"
+date: "2024-11-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## You will need
+
+-   Our usual libraries for working with data, including dates and column names, plus rvest.
+
+## Load libraries and establish settings
+
+**Task** Create a codeblock and load appropriate packages and settings for this lab.
+
+```{r}
+#| output: false
+library(rvest)
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(dplyr)
+```
+
+
+Let's get to scraping. We'll be working on collecting information about Maryland election results, and then we'll grab some congressional press releases. For Maryland races, we'll focus on Board of Education races using this CNS story as a guide: https://cnsmaryland.org/2024/11/08/md-conservatives-make-gains-in-school-board-races/. You should read it.
+
+## Questions
+
+**Q1**. Write code to scrape the table of unofficial results from Frederick County's Board of Education races (https://elections.maryland.gov/elections/2024/general_Results/gen_results_2024_by_county_11.html), producing a dataframe that contains the *results* of that race for each candidate and *removing the total*. You'll need to *identify which table on the page contains the BOE results*. All numbers should actually be numbers, including the percentage. Then make a bar chart of the results, noting that the top 3 candidates win.
+
+**A1** the top 3 candidates were Brennan, Monier, and Black. 
+
+```{r}
+#scraping the table and producing the dataframe
+pres_url <- "https://elections.maryland.gov/elections/2024/general_Results/gen_results_2024_by_county_11.html"
+```
+
+```{r}
+#save the HTML from that URL as a variable
+results_EOB <- pres_url |>
+  read_html()
+
+# display the html below
+results_EOB
+```
+```{r}
+# read in the html and extract all the tables
+results_EOB <- pres_url |>
+  read_html() |>
+  html_table()
+
+# show the dataframe
+
+results_EOB
+```
+
+```{r}
+# Read in all html from table, store all tables on page as nested list of dataframes.
+results_EOB <- pres_url |>
+  read_html() |>
+  html_table()
+
+# Just keep the first dataframe in our list
+
+results_EOB <- results_EOB[[9]]
+
+```
+
+
+```{r}
+# Read in all html from table, get the HTML table.
+results_EOB <- pres_url |>
+  read_html() |>
+  html_table()
+
+results_EOB <- results_EOB[[9]] |> 
+  clean_names() |>
+  slice(-9) |>
+  mutate(early_voting = as.numeric(gsub(",","", early_voting))) |>
+  mutate(election_day = as.numeric(gsub(",","", election_day))) |>
+  mutate(mail_in_ballot = as.numeric(gsub(",","", mail_in_ballot))) |>
+  mutate(total = as.numeric(gsub(",","", total))) |>
+  mutate(percentage = as.numeric(gsub("%","", percentage)))
+
+  
+```
+
+```{r}
+#barchart
+
+results_EOB |>
+  ggplot() +
+  geom_bar(aes(x=reorder(name, percentage), weight=percentage)) +
+    coord_flip() +
+    theme_minimal() +
+  labs(
+    title="Conservative school board candidates saw sweeping wins 
+                            across Maryland
+                                                    
+                                                (top 3 candidates win)",
+    y = "% of votes",
+    x = "candidates",
+    caption = "source: Maryland State Board of Elections"
+
+  )
+
+
+```
+
+**Q2** Next, let's scrape the list of press releases from Maryland's Office of the Public Defender, <https://www.opd.state.md.us/press-releases> [https://osp.maryland.gov/category/press-releases/]. This isn't a table, so you'll need to use `html_elements()` and your browser's inspector and do some clean up on the results. The result should be a *dataframe with three columns: title, url and date*. HINT: you can extract the date from the title using lubridate OR you can use the `separate` function.
+
+You should have 10 releases when finished, not 20.
+
+Then, write code that finds the most recent release with the word "Campaign" in the title. What election does it refer to?
+
+**A2** The most recent release featuring the word 'Campaign' in the title refers to the John King for Governor campaign during the 2022 Maryland Primary Election.
+
+```{r}
+press_releases_url <- "https://osp.maryland.gov/category/press-releases/"
+```
+
+```{r}
+press_releases <- press_releases_url |>
+  read_html()
+
+# show the result
+press_releases
+```
+
+```{r}
+press_releases |> html_elements('article') %>% html_text()
+```
+```{r}
+press<- press_releases |> html_elements("article a")
+
+press_releases_with_urls <- tibble(
+  title = press %>% html_text(trim = TRUE),
+  url = press %>% html_attr("href")
+)
+```
+
+```{r}
+press_releases_with_urls <- press_releases_with_urls |> 
+  # filter out 
+  filter(!title == "Read the Rest…")
+```
+
+
+```{r}
+press_releases_with_urls <- press_releases_with_urls |> 
+  mutate(date = mdy(title))
+```
+
+```{r}
+#write code that finds the most recent release with the word "Campaign" in the title. What election does it refer to?
+
+most_recent_releases <- press_releases_with_urls |>
+  filter(str_detect(title, "Campaign")) |>
+  arrange(desc(date))
+
+```
+
+
+
+**Q3** Sen. Ben Cardin, D-Maryland, has posted hundreds of press releases at <https://www.cardin.senate.gov/?post_type=press-releases>. It would be great to have all of them in a dataframe that has the following columns: date, title and url.
+
+To do this, you will need to scrape the page's html and save that to a variable, and *then* extract the dates, titles and urls into *separate* dataframes using html_elements(). We turn a list into a dataframe using `as_tibble()`.
+
+At the end, you'll have three dataframes that you want to combine into a single dataframe. When we want to combine the rows of identical dataframes, we used `bind_rows()`. If you were combining columns instead of rows, there's a similar function. Use it to put all of the dataframes together into a single one. You are combining columns, not rows.
+
+When you're done, rename the columns so they make sense, then make sure the date column is an actual date.
+
+Finally, tell me what questions you could ask of this data, and what other information about it would be useful to have. Be creative.
+
+**A3** In my opinion, it would be interesting to filter these articles and analyze how many of them feature the terms "Trump" or "Republicans." This approach will help shed light on the campaign's strategic focus - whether it was more oriented toward fighting the opposition or highlighting and promoting Democratic ideas and values under Sen. Ben Cardin's leadership. By analysing the frequency of these terms, we can gain insights into the campaign's messaging and tone. Additionally, tracking this over time could reveal shifts in rhetoric, particularly in response to changes in the political landscape. For example, we could explore whether there was a noticeable increase of negative references to Republicans as the election predictions began to show a stronger momentum toward Trump, suggesting a shift in the campaign's strategy to counter the growing threat from the opposition.  
+
+```{r}
+Cardin_releases_url <- "https://www.cardin.senate.gov/?post_type=press-releases"
+```
+
+```{r}
+Cardin_releases <- Cardin_releases_url |>
+  read_html()
+```
+
+```{r}
+Cardin_releases |> html_elements('article') |> html_text()
+
+```
+
+
+```{r}
+Cardin_articles <- Cardin_releases |> html_elements("article a")
+
+Cardin_releases_with_title <- tibble(
+  title = Cardin_articles %>% html_text(trim = TRUE)
+)
+```
+
+```{r}
+#title
+Cardin_releases_with_title <- Cardin_releases_with_title |> 
+  # filter out 
+  filter(!title == "Read More")
+```
+
+```{r}
+#url
+Cardin_articles <- Cardin_releases |> html_elements("article a")
+
+Cardin_releases_with_url <- tibble(
+  url = Cardin_articles %>% html_attr("href")
+)
+```
+
+```{r}
+Cardin_releases_with_url <- Cardin_releases_with_url |> distinct() 
+```
+
+```{r}
+#dates
+Cardin_dates <- Cardin_releases |> 
+  html_elements("h5.customBlog_item__date") |> 
+  html_text()
+
+dates <- Cardin_dates |> 
+  mdy() 
+
+Cardin_releases_with_date <- tibble(dates = dates)
+```
+
+```{r}
+#combined data
+
+combined_data <- bind_cols(Cardin_releases_with_date, Cardin_releases_with_title, Cardin_releases_with_url)
+```
+
