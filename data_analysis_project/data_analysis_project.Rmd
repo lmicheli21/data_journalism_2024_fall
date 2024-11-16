@@ -1,0 +1,42 @@
+---
+title: "data_analysis_prj"
+author: "Leonardo Micheli"
+date: "2024-11-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Turn off scientific notation
+options(scipen=999)
+
+# Load the tidyverse.
+library(tidyverse)
+library(tidycensus)
+library(dplyr)
+
+```
+```{r}
+MD_Party_2024 <- read_csv("data_analysis_project/Data/2024_MD_Party.csv")
+MD_County <- read_csv("data_analysis_project/Data/MD_County.csv")
+```
+
+```{r}
+MD_Party_2024 <- MD_Party_2024 |>
+  slice(-25)
+```
+
+
+
+```{r}
+MD_Party_2024 <- bind_cols(MD_County, MD_Party_2024)
+
+```
+
+```{r}
+write_csv(MD_Party_2024, "MD_Party_2024.csv")
+```
+
