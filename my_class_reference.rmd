@@ -390,7 +390,29 @@ ggplot() +
 )
 
 #  "^/" means a the beginning
+  
+stop_words --> packaged with words
+  add_row(word = "???") --> #to add words
 
+ngrams --> #is any combination of words that you specify. Two word ngrams are called bigrams (bi-grams). Three would be trigrams. And so forth.
+releases |>
+e.g.,  
+filter(year(date) == 2022) |>
+  unnest_tokens(bigram, text, token = "ngrams", n = 2) |>
+  separate(bigram, c("word1", "word2"), sep = " ") |>
+  filter(!word1 %in% stop_words$word) |>
+  filter(!word2 %in% stop_words$word) |>
+  mutate(bigram = paste(word1, word2, sep=" ")) |>
+  group_by(bigram) |>
+  tally(sort=TRUE) |>
+  mutate(percent = (n/sum(n))*100) |>
+  top_n(10)
+  
+
+library(textstem) --> to detect text
+library(bing) --> 
+  
+  
 
 
 
