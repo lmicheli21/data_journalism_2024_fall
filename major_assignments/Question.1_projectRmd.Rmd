@@ -1,0 +1,243 @@
+---
+title: "Data Analysis Project"
+author: "Group 4"
+date: "11-16-2024"
+output:
+  html_document:
+    theme: cerulean
+    highlight: pygments
+    toc: true
+    toc_float:
+      collapsed: true
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Deliverable 2 (week 12) - 10 percent*: 
+
+*Question 1* Lists your questions - if i asked you to refine them, show me that you've done that.
+
+*Answer 1* 
+Q1. For the big picture, in *Maryland*,
+
+1.1 How many voters registered for each party in the 2024 primary and general election? 
+*Answer* In the 2024 general elections, the registration totals were as follows: 2211316 registered for the Democratic Party, 1007384 for the Republican Party, 78234 for other parties, and 907638 were unaffiliated. In the primary elections, 2202830 registered for the Democrats, 994388 for the Republicans, 31418 for other parties, and 451465 were unaffiliated.
+
+1.1.1 How have these numbers changed compared to those in previous elections?
+
+*Answer* Compared to the previous election (2020, the primary elections in 2024 saw a decline in registrations for the major parties, while other parties and unaffiliated registrants gained significant popularity. Specifically, the Democratic Party lost 1.24%, the Republican Party lost 1.45%, while other parties gained 44.95%, and unaffiliated registrations increased by 40.24%. This trend continued in the general elections, with the Democratic Party experiencing a 2.27% decrease, while the Republican Party saw a smaller drop of 0.82%. Similarly, other parties gained 21.54%, and unaffiliated registrations rose by 18.36%.
+
+1.2 Compared to the total population of the state, what is the proportion of voters who register for the election?
+*Answer* In the primary elections, voter turnout was 59.72% of the total population, while in the general elections, it increased to 68.23%. 
+
+1.3 Compared to the 2024 presidential election result, does the registration pattern match with the result? 
+*Answer* By comparing the general party registrations in Maryland for 2024 with the presidential election results, it is notable that the number of actual voters for most parties and the unaffiliated group sharply decreased. The exception to this trend is the Republican Party, which gained 19,258 more votes than the number of registrations. In contrast, the Democratic Party saw a significant decline, losing 350,372 voters in the election compared to their registrations.
+
+---
+
+```{r}
+#Load Libraries 
+library(tidyverse)
+library(janitor)
+library(tidycensus)
+library(rvest)
+library(dplyr)
+```
+
+*Question 1* Loads and cleans the core data set to prepare for analysis.
+
+```{r}
+#Prep dataframe for Q1 focusing on Maryland
+
+#Registration Data
+md_primary_24 <- read_csv("data/county/county_primary_24.csv")
+md_general_24 <- read_csv("data/county/county_general_24.csv")
+md_primary_20 <- read_csv("data/county/county_primary_20.csv")
+md_primary_20 <- md_primary_20 |>
+  rename(County = 1)
+md_general_20 <- read_csv("data/county/county_general_20.csv")
+
+#Population Data
+state_population <- get_acs(geography="state", 
+                       variables = "B01003_001", 
+                       year=2022)
+md_population <- state_population |>
+  slice(21)
+
+#Presidential Election Result
+pres_election_result_url <- "https://elections.maryland.gov/elections/2024/general_Results/gen_results_2024_1.html"
+pres_election_result_html <- pres_election_result_url |>
+  read_html() |>
+  html_table()
+pres_election_result <- pres_election_result_html[[1]]
+pres_election_result <- pres_election_result |> clean_names()
+pres_election_result <- pres_election_result |>
+    slice(-c(34, 35))
+```
+
+```{r}
+#voters registered for each party in 2024 primary election
+total_md_primary_24 <- md_primary_24 |> 
+    mutate(OTH = OTH + NLM + LIB) |>
+  summarise(
+    DEM_tot = sum(DEM),
+    REP_tot = sum(REP),
+    OTH_tot = sum(OTH),
+    UNA_tot = sum(UNA)
+  )
+```
+
+```{r}
+#voters registered for each party in 2024 general election
+total_md_general_24 <- md_general_24 |> 
+  mutate(OTH = OTH + GRN + NLM + LIB) |> 
+summarise(
+    DEM_tot = sum(DEM),
+    REP_tot = sum(REP),
+    OTH_tot = sum(OTH),
+    UNA_tot = sum(UNA)
+  )
+```
+
+```{r}
+#voters registered for each party in 2020 primary election
+total_md_primary_20 <- md_primary_20 |>
+  mutate(OTH = OTH + BAR + WCP) |>
+  summarise(
+    DEM_tot = sum(DEM),
+    REP_tot = sum(REP),
+    OTH_tot = sum(OTH),
+    UNA_tot = sum(UNA)
+  )
+```
+
+```{r}
+#voters registered for each party in 2020 general election
+total_md_general_20 <- md_general_20 |>
+  mutate(OTH = OTH + BAR + WCP + GRN + LIB) |>
+  summarise(
+    DEM_tot = sum(DEM),
+    REP_tot = sum(REP),
+    OTH_tot = sum(OTH),
+    UNA_tot = sum(UNA)
+  )
+```
+
+```{r}
+#How have these numbers changed compared to those in previous elections?*
+total_md_primary_24 <- total_md_primary_24 |> 
+  mutate(Year = 2024)
+
+total_md_general_24 <- total_md_general_24 |> 
+  mutate(Year = 2024)
+
+total_md_primary_20 <- total_md_primary_20 |> 
+  mutate(Year = 2020)
+
+total_md_general_20 <- total_md_general_20 |> 
+  mutate(Year = 2020)
+
+comparison_general <- bind_rows(total_md_general_24, total_md_general_20) |>
+select(Year, everything())
+
+comparison_primary <- bind_rows(total_md_primary_24, total_md_primary_20) |>
+select(Year, everything())
+```
+
+```{r}
+#percentage difference between 2024 and 2022 per each party in geenral elections
+comparison_general <- comparison_general|>
+    mutate(
+    DEM_pct_diff = (DEM_tot[1] - DEM_tot[2]) / DEM_tot[2] * 100,
+    REP_pct_diff = (REP_tot[1] - REP_tot[2]) / REP_tot[2] * 100,
+    OTH_pct_diff = (OTH_tot[1] - OTH_tot[2]) / OTH_tot[2] * 100,
+    UNA_pct_diff = (UNA_tot[1] - UNA_tot[2]) / UNA_tot[2] * 100
+  )
+
+```
+
+```{r}
+#percentage difference between 2024 and 2022 per each party in primary elections
+comparison_primary <- comparison_primary|>
+    mutate(
+    DEM_pct_diff = (DEM_tot[1] - DEM_tot[2]) / DEM_tot[2] * 100,
+    REP_pct_diff = (REP_tot[1] - REP_tot[2]) / REP_tot[2] * 100,
+    OTH_pct_diff = (OTH_tot[1] - OTH_tot[2]) / OTH_tot[2] * 100,
+    UNA_pct_diff = (UNA_tot[1] - UNA_tot[2]) / UNA_tot[2] * 100
+  )
+
+```
+
+```{r}
+#voters registered for general 2024 in proportion to population
+proportion_md_general_24 <- md_general_24 |>
+  summarise(
+    total_voters = sum(TOTAL),
+    MD_pop = "6161707",
+    pct_voters = (total_voters / 6161707) *100
+  )
+
+```
+
+```{r}
+#voters registered for primary 2024 in proportion to population
+proportion_md_primary_24 <- md_primary_24 |>
+  summarise(
+    total_voters = sum(TOTAL),
+    MD_pop = "6161707",
+    pct_voters = (total_voters / 6161707) *100
+  )
+```
+
+```{r}
+#*1.3 Compared to the 2024 presidential election result, does the registration pattern match with the result?*
+party_elections_results <- pres_election_result |>
+  mutate(
+    total = as.numeric(gsub(",", "", total))  
+  ) |>
+  group_by(party) |> 
+  summarise(
+    Total_votes = sum(total)  
+  )
+
+party_elections_results <- party_elections_results |> 
+  mutate(
+    Total_votes = if_else(party == "Other Candidates", 
+                          Total_votes + sum(Total_votes[party %in% c("Green", "Libertarian")]), 
+                          Total_votes)
+  ) |> 
+  filter(!party %in% c("Green", "Libertarian"))
+
+```
+
+```{r}
+total_md_general_24_transformed <- total_md_general_24 |> 
+  pivot_longer(
+    cols = c(DEM_tot, REP_tot, OTH_tot, UNA_tot),  
+    names_to = "party",                          
+    values_to = "Total_votes"                   
+  ) |> 
+  mutate(
+    party = case_when(                           
+      party == "DEM_tot" ~ "Democratic",
+      party == "REP_tot" ~ "Republican",
+      party == "OTH_tot" ~ "Other Candidates",
+      party == "UNA_tot" ~ "Unaffiliated",
+      TRUE ~ party
+    )
+  ) |> 
+  select(party, Total_votes)
+
+```
+
+```{r}
+comparison_general_elections <- full_join(party_elections_results, total_md_general_24_transformed, by = "party") |>
+  rename(Total_election = Total_votes.x, Total_general = Total_votes.y) |>
+    mutate(
+    Difference = Total_election - Total_general 
+    )
+
+```

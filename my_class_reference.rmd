@@ -411,9 +411,26 @@ filter(year(date) == 2022) |>
 
 library(textstem) --> to detect text
 library(bing) --> 
-  
-  
 
+    
+#ai support 
+library(devtools)
+devtools::install_github("heurekalabsco/axolotr")
+library(axolotr)
 
+create_credentials(GROQ_API_KEY = "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")
+    
+  groq_response <- axolotr::ask(
+  prompt = "Give me 20 names for a pet lemur",
+  model = "llama-3.1-8b-instant"
+)
+
+cat(groq_response)
+  
+-->   prompt = paste("Given the following text, extract information into a CSV file with the following structure with no yapping: celebrant1,celebrant2,location,officiant,celebrant1_age,celebrant2_age,celebrant1_parent1,celebrant1_parent2,celebrant2_parent1,celebrant2_parent2. Omit quotemarks", text)
+
+    #paste 
+  to combine two different things
+  
 
 
